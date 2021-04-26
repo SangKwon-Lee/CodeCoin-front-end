@@ -43,6 +43,7 @@ const PostModalUI = () => {
 	const [blogLink, setBlogLink] = useState("");
 	const [isBlog, setIsBlog] = useState(false);
 	const [blogName, setBlogName] = useState("");
+	const [ablogName, setaBlogName] = useState("");
 
 	const handleClickOpen = () => {
 		setOpen(true);
