@@ -94,7 +94,7 @@ const datas = [
 const CardPresenter = () => {
 	return (
 		<Card>
-			<CardTitle>CC 포스트!</CardTitle>
+			<CardTitle>CC 포스트</CardTitle>
 			<CardWrapper>
 				{datas?.map((data) => (
 					<CardPresenterItem data={data} />
