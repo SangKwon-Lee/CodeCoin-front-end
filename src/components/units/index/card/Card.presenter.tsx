@@ -91,20 +91,20 @@ const datas = [
 	},
 ];
 
-const CardPresenter = () => {
+const CardUI = () => {
 	return (
 		<Card>
-			<CardTitle>CC 포스트!</CardTitle>
+			<CardTitle>CC 포스트</CardTitle>
 			<CardWrapper>
 				{datas?.map((data) => (
 					<CardPresenterItem data={data} />
 				))}
 				{new Array(datas?.length % 4).fill("").map((data) => (
-					<EmptyCard key={data.stage} />
+					<EmptyCard />
 				))}
 			</CardWrapper>
 		</Card>
 	);
 };
 
-export default CardPresenter;
+export default CardUI;

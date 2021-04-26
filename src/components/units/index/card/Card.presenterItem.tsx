@@ -21,7 +21,7 @@ import {
 
 import { ICardProps } from "./Card.types";
 
-const CardPresenterItem: React.FC<ICardProps> = ({ data }) => {
+const CardUIItem: React.FC<ICardProps> = ({ data }) => {
 	return (
 		<CardDesign>
 			<CardDesignTitleAndIConWrapper>
@@ -61,4 +61,4 @@ const CardPresenterItem: React.FC<ICardProps> = ({ data }) => {
 	);
 };
 
-export default CardPresenterItem;
+export default CardUIItem;

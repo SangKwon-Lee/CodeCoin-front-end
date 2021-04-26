@@ -1,9 +1,11 @@
 
 export type ICardProps = {
-  stage: number;
-  name: string;
-  title: string;
-  date: string;
-  like: number;
-  scrap: number;
+  data: {
+    stage: number;
+    name: string;
+    title: string;
+    date: string;
+    like: number;
+    scrap: number;
+  }
 }

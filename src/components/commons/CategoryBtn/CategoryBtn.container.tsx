@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CategoryBtnPresenter from "./CategoryBtn.presenter";
+import CategoryBtnUI from "./CategoryBtn.presenter";
 
-const CategoryBtnContainer = () => {
+const CategoryBtn = () => {
 	const [list, setList] = React.useState<{
 		list: string;
 		name: string;
@@ -20,7 +20,7 @@ const CategoryBtnContainer = () => {
 		});
 	};
 
-	return <CategoryBtnPresenter handleChange={handleChange} list={list.list} />;
+	return <CategoryBtnUI handleChange={handleChange} list={list.list} />;
 };
 
-export default CategoryBtnContainer;
+export default CategoryBtn;

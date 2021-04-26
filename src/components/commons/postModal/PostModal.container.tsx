@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import PostModalPresenter from "./PostModal.presenter";
+import PostModalUI from "./PostModal.presenter";
 
-const PostModalContainer = () => {
-	return <PostModalPresenter />;
+const PostModal = () => {
+	return <PostModalUI />;
 };
 
-export default PostModalContainer;
+export default PostModal;

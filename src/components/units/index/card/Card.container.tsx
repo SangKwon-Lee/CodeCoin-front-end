@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import CardPresenter from "./Card.presenter";
+import CardUI from "./Card.presenter";
 
-const CardContainer = () => {
-	return <CardPresenter />;
+const Card = () => {
+	return <CardUI />;
 };
 
-export default CardContainer;
+export default Card;

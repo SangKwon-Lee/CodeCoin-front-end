@@ -14,6 +14,7 @@ max-width: 75rem;
 width: 100%;
 align-items:center;
 justify-content:space-between;
+padding-bottom:5rem;
 `
 
 export const SearchBarBackground = styled.div`
@@ -48,6 +49,7 @@ height:1.125rem;
 
 
 export const RegisterPost = styled.button`
+
 max-width: 10.75rem;
 width:100%;
 height: 4.25rem;
@@ -60,7 +62,11 @@ border-radius:1rem;
 `
 
 export const PostIcon = styled.img`
-
 padding-right:0.5rem;
 `
 
+
+export const CategoryBtnWrapper = styled.div`
+display:flex;
+
+`

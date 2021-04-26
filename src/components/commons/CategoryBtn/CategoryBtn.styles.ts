@@ -15,7 +15,6 @@ export const useStyles = makeStyles((theme: Theme) =>
 );
 
 export const MUISelect = styled(Select)`
-  /* max-width: 13rem; */
   text-align:center;
   width: 12rem;
   height: 4.25rem;

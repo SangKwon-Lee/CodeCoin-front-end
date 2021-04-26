@@ -54,7 +54,7 @@ export const CardDesignTitleIcon = styled.img``
 
 export const CardDesignProfileWrapper = styled.div`
   display:flex;
-  width:8rem;
+  width:8.5rem;
   justify-content:space-between;
   align-items:center;
   padding-top:1.125rem;

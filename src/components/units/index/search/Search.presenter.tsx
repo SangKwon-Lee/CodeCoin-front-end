@@ -8,14 +8,15 @@ import {
 	SearchIcon,
 	RegisterPost,
 	PostIcon,
+	CategoryBtnWrapper,
 } from "./Search.styles";
-import CategoryBtnPresenter from "../../../commons/CategoryBtn/CategoryBtn.presenter";
-import PostModalContainer from "../../../commons/postModal/PostModal.container";
+import CategoryBtnUI from "../../../commons/CategoryBtn/CategoryBtn.presenter";
+import PostModal from "../../../commons/postModal/PostModal.container";
 
 const SearchPresenter = () => {
 	return (
 		<>
-			{<PostModalContainer />}
+			<PostModal />
 			<Search>
 				<SearchWrapper>
 					<SearchBarBackground>
@@ -24,7 +25,9 @@ const SearchPresenter = () => {
 							<SearchBar placeholder="내용을 검색해주세요."></SearchBar>
 						</SearchBarAndIconWrap>
 					</SearchBarBackground>
-					<CategoryBtnPresenter></CategoryBtnPresenter>
+					<CategoryBtnWrapper>
+						<CategoryBtnUI></CategoryBtnUI>
+					</CategoryBtnWrapper>
 					<RegisterPost>
 						<PostIcon src="/img/post.png"></PostIcon>포스트하기
 					</RegisterPost>

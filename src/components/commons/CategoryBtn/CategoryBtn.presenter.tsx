@@ -3,7 +3,7 @@ import CategoryBtnContainer from "./CategoryBtn.container";
 import { MUISelect, useStyles } from "./CategoryBtn.styles";
 import { ICategoryBtnProps } from "./CategoryBtn.types";
 
-const CategoryBtnPresenter = ({ handleChange, list }: ICategoryBtnProps) => {
+const CategoryBtnUI: React.FC<ICategoryBtnProps> = ({ handleChange, list }) => {
 	const classes = useStyles();
 
 	return (
@@ -31,4 +31,4 @@ const CategoryBtnPresenter = ({ handleChange, list }: ICategoryBtnProps) => {
 	);
 };
 
-export default CategoryBtnPresenter;
+export default CategoryBtnUI;
