@@ -14,7 +14,7 @@ max-width: 75rem;
 width: 100%;
 align-items:center;
 justify-content:space-between;
-padding-bottom:5rem;
+
 `
 
 export const SearchBarBackground = styled.div`
@@ -31,6 +31,8 @@ border:none;
 
 export const SearchBarAndIconWrap = styled.div`
 display:flex;
+width: 90%;
+align-items:center;
 `
 
 export const SearchBar = styled.input`
@@ -40,6 +42,7 @@ outline:none;
 color:black;
 padding-left:1rem;
 font-size:1.25rem;
+width: 100%;
 `
 
 export const SearchIcon = styled.img`
@@ -59,6 +62,7 @@ font-size:1.25rem;
 border:none;
 outline:none;
 border-radius:1rem;
+cursor:pointer;
 `
 
 export const PostIcon = styled.img`

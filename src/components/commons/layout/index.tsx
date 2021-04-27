@@ -1,3 +1,4 @@
+import LoginModal from "../loginModal/LoginModal.container";
 import HeaderContainer from "./header/Header.container";
 
 interface ILayout {

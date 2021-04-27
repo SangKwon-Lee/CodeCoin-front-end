@@ -1,9 +1,12 @@
 import styled from "@emotion/styled";
 import Search from "./search/Search.container";
 import Card from "./card/Card.container";
+import LoginModal from "../../commons/loginModal/LoginModal.container";
+import MyPageModal from "../../commons/mypageModal/MypageModal.container";
 
 const Home = () => (
 	<>
+		<MyPageModal />
 		<HomeWrapper>
 			<Banner src="img/banner.png" alt="banner"></Banner>
 			<Search />

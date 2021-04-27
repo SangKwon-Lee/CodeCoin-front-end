@@ -14,7 +14,6 @@ export const HeaderWrapper = styled.div`
 `
 
 export const Logo = styled.img`
-
 `
 
 export const HeaderRightLogoutWrapper = styled.div`
@@ -24,7 +23,12 @@ export const HeaderRightLogoutWrapper = styled.div`
   justify-content: space-between;
 
 `
-export const Login = styled.div`
+export const Login = styled.button`
+  background-color:transparent;
+  cursor: pointer;
+  border:none;
+  outline:none;
+  font-weight:500;
   font-size: 1rem;
 `
 
@@ -34,13 +38,20 @@ export const SignUp = styled.button`
   color: white;
   padding: 0.875rem 1.5rem;
   border-radius: 16px;
+  outline:none;
+  cursor: pointer;
+
 `
 
-export const HeaderRightLoginWrapper = styled.div`
+export const HeaderRightLoginWrapper = styled.button`
   display:flex;
   align-items:center;
   justify-content:space-between;
   width:5.75rem;
+  border:none;
+  background-color:transparent;
+  cursor: pointer;
+  outline:none;
 `
 export const HeaderProfile = styled.img`
 
