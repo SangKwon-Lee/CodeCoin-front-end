@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button, DialogActions } from "@material-ui/core";
-
+import { DialogActions } from "@material-ui/core";
+import { IPostModal } from "./PostModal.types";
 import {
 	Modal,
 	ModalProfileWrapper,
@@ -36,22 +36,13 @@ import CategoryRadio from "../../commons/CategoryRadio/CategoryRadio.container";
 
 const items = ["TJ", "TJT", "TIL"];
 
-const PostModalUI = () => {
-	const [open, setOpen] = React.useState(false);
+const PostModalUI = ({ handlePostModal }: IPostModal) => {
+	const [open, setOpen] = useState(false);
 	const [radioValue, setRadioValue] = useState("TJ");
 	const [postTitle, setPostTitle] = useState("");
 	const [blogLink, setBlogLink] = useState("");
 	const [isBlog, setIsBlog] = useState(false);
 	const [blogName, setBlogName] = useState("");
-	const [ablogName, setaBlogName] = useState("");
-
-	const handleClickOpen = () => {
-		setOpen(true);
-	};
-
-	const handleClose = () => {
-		setOpen(false);
-	};
 
 	const handlePostTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setPostTitle(e.target.value);
@@ -62,7 +53,7 @@ const PostModalUI = () => {
 	};
 
 	const handleBlogOpen = () => {
-		setIsBlog(!isBlog);
+		setIsBlog((prev) => !prev);
 	};
 
 	const handleBlogName = (event: any) => {
@@ -71,22 +62,19 @@ const PostModalUI = () => {
 
 	return (
 		<>
-			<Button variant="outlined" color="primary" onClick={handleClickOpen}>
-				Slide in alert dialog
-			</Button>
-
 			<Modal
 				open={true}
 				keepMounted
-				onClose={handleClose}
+				onClose={handlePostModal}
 				aria-labelledby="alert-dialog-slide-title"
 				aria-describedby="alert-dialog-slide-description"
 				PaperProps={{
 					style: {
+						// top: "200px",
 						width: "41.75rem",
-						height: "84.625rem",
 						display: "flex",
 						alignItems: "center",
+						// maxHeight: "1354px",
 					},
 				}}
 				maxWidth={"lg"}
@@ -154,7 +142,7 @@ const PostModalUI = () => {
 				</ModalContentsWrapper>
 
 				<DialogActions>
-					<ModalPostBtn onClick={handleClose} color="primary">
+					<ModalPostBtn onClick={handlePostModal} color="primary">
 						포스트하기
 					</ModalPostBtn>
 				</DialogActions>
