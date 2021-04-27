@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MyPageModalUI from "./MypageModal.presenter";
 
 const MyPageModal = () => {
-	return <MyPageModal />;
+	return <MyPageModalUI />;
 };
 
 export default MyPageModal;
