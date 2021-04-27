@@ -5,7 +5,7 @@ import { MyPageModal } from "./MypageModal.styles";
 const MyPageModalUI = () => {
 	return (
 		<>
-			<MyPageModal>as</MyPageModal>
+			<MyPageModal></MyPageModal>
 		</>
 	);
 };
