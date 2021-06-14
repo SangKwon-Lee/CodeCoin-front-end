@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import SearchContainer from "./Search.container";
+import React from 'react';
 import {
 	Search,
 	SearchWrapper,
@@ -10,24 +9,16 @@ import {
 	RegisterPost,
 	PostIcon,
 	CategoryBtnWrapper,
-} from "./Search.styles";
-import CategoryBtnUI from "../../../commons/CategoryBtn/CategoryBtn.presenter";
-import PostModal from "../../../commons/postModal/PostModal.container";
+} from './Search.styles';
+import CategoryBtnUI from '../../../commons/CategoryBtn/CategoryBtn.container';
+import PostModal from '../../../commons/postModal/PostModal.container';
+import { ISearchProps } from './Search.types';
 
-const SearchPresenter = () => {
-	const [postModalOpen, setPostModalOpen] = useState(false);
-
-	const handlePostModal = () => {
-		setPostModalOpen((prev) => !prev);
-	};
-
-	const [searchWord, setSearchWord] = useState("");
-
-	const handleSearchWord = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setSearchWord(e.target.value);
-		console.log(e.target.value);
-	};
-
+const SearchPresenter = ({
+	postModalOpen,
+	handlePostModal,
+	handleSearchWord,
+}: ISearchProps) => {
 	return (
 		<>
 			{postModalOpen ? <PostModal handlePostModal={handlePostModal} /> : <></>}

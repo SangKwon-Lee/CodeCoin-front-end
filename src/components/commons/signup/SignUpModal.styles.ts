@@ -40,7 +40,7 @@ export const SignUpContentsWrapper = styled.div`
 
 `
 
-export const SignUpNameBox = styled.div`
+export const SignUpNameBox = styled.input`
   width:24rem;
   border:1px solid black;
   border-radius:1rem;
@@ -51,6 +51,7 @@ export const SignUpNameBox = styled.div`
   font-size:1rem;
   font-weight:700;
   margin-bottom:1.25rem;
+  outline: none;
 `
 
 export const SignUpNumberBox = styled.button`
@@ -144,14 +145,12 @@ export const SignUpNumber1 = styled.button`
   border-top-right-radius:1rem;
   outline:none;
     font-weight:700;
-  background-color:transparent;
+background-color:${(props: SignupProps) => (props.isActive ? '#F4F6F7;' : 'transparent')};
   border:none;
   :hover{
     background-color:#F4F6F7;
   }
-  :focus{
-    background-color:#F4F6F7;
-  }
+ 
 
 `
 
@@ -163,16 +162,13 @@ export const SignUpNumber2 = styled.button`
   border-bottom-right-radius:1rem;
   outline:none;
   font-weight:700;
-  background-color:transparent;
   border:none;
+  background-color:${(props: SignupProps) => (props.isActive ? '#F4F6F7;' : 'transparent')};
   border-top:1px solid  #CAD2D5;
   :hover{
     background-color:#F4F6F7;
-    border-bottom:1px solid #CAD2D5;
   }
-  :focus{
-    background-color:#F4F6F7;
-  }
+
   `
 
   export const SignUpPositionSelectWrapper = styled.div`
@@ -184,6 +180,10 @@ export const SignUpNumber2 = styled.button`
   margin-bottom:1.25rem;
 `
 
+interface SignupProps {
+  isActive: boolean;
+}
+
 export const SignUpMentor = styled.button`
   height:4rem;
   max-width:36.75rem;
@@ -192,14 +192,13 @@ export const SignUpMentor = styled.button`
   border-top-left-radius:1rem;
   border-top-right-radius:1rem;
   outline:none;
-  background-color:transparent;
+  background-color:${(props: SignupProps) => (props.isActive ? '#F4F6F7;' : 'transparent')};
   border:none;
   :hover{
     background-color:#F4F6F7;
   }
-  :focus{
-    background-color:#F4F6F7;
-  }
+
+
 `
 
 export const SignUpMentee = styled.button`
@@ -210,14 +209,11 @@ export const SignUpMentee = styled.button`
   border-bottom-left-radius:1rem;
   border-bottom-right-radius:1rem;
   outline:none;
-  background-color:transparent;
+    background-color:${(props: SignupProps) => (props.isActive ? '#F4F6F7;' : 'transparent')};
   border:none;
   border-top:1px solid  #CAD2D5;
   :hover{
     background-color:#F4F6F7;
-    border-bottom:1px solid #CAD2D5;
   }
-  :focus{
-    background-color:#F4F6F7;
-  }
+
   `

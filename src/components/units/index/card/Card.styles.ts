@@ -17,7 +17,6 @@ export const CardWrapper = styled.div`
   display:flex;
   width:100%;
   flex-wrap:wrap;
-  
   justify-content:space-between;
   align-items:center;
 `
@@ -92,14 +91,12 @@ export const CardDesignDateAndLikeWrapper = styled.div`
 export const CardDesignDate = styled.div`
   font-size:0.875rem;
 `
-
 export const CardDesignLikeWrapper = styled.div`
   display:flex;
   justify-content:space-between;
   align-items:center;
   width:5rem;
 `
-
 export const CardDesginLikeImg = styled.img``
 
 export const CardDesginLikeCount = styled.div`

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import CategoryBtnUI from "./CategoryBtn.presenter";
+import React, { useState } from 'react';
+import CategoryBtnUI from './CategoryBtn.presenter';
 
 const CategoryBtn = () => {
 	const [list, setList] = React.useState<{
 		list: string;
 		name: string;
 	}>({
-		list: "",
-		name: "",
+		list: '',
+		name: '',
 	});
 
 	const handleChange = (

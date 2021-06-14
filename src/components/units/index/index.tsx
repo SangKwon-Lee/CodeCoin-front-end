@@ -6,7 +6,7 @@ import MyPageModal from "../../commons/mypageModal/MypageModal.container";
 
 const Home = () => (
 	<>
-		<MyPageModal />
+		{/* <MyPageModal /> */}
 		<HomeWrapper>
 			<Banner src="img/banner.png" alt="banner"></Banner>
 			<Search />

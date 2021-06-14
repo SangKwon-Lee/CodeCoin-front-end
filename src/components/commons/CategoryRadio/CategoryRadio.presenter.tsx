@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-
 import { ModalRadioGroup, ModalFormControlLabel } from "./CategoryRadio.styles";
-
 import Radio from "@material-ui/core/Radio";
-
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import { withStyles } from "@material-ui/core/styles";

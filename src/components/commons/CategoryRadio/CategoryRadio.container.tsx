@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import CategoryRadioUI from "./CategoryRadio.presenter";
+import React, { useState } from 'react';
+import CategoryRadioUI from './CategoryRadio.presenter';
 
 interface IProps {
 	items: string[];
@@ -7,11 +7,11 @@ interface IProps {
 }
 
 const CategoryRadio = ({ items, setRadioValue }: IProps) => {
-	const [value, setValue] = React.useState("TJ");
+	const [value, setValue] = React.useState('TJ');
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setValue((event.target as HTMLInputElement).value);
-		setRadioValue((event.target as HTMLInputElement).value);
+		setRadioValue(event.target.value);
 	};
 
 	return (
