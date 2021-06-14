@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { DialogActions } from "@material-ui/core";
-import { IPostModal } from "./PostModal.types";
+import React, { useEffect, useState } from 'react';
+import { DialogActions } from '@material-ui/core';
+import { IPostModal } from './PostModal.types';
 import {
 	Modal,
 	ModalProfileWrapper,
@@ -30,34 +30,53 @@ import {
 	ModalBlogVelog,
 	ModalBlogTistory,
 	ModalBlogGitBlog,
-} from "./PostModal.styles";
+} from './PostModal.styles';
 
-import CategoryRadio from "../../commons/CategoryRadio/CategoryRadio.container";
+import CategoryRadio from '../../commons/CategoryRadio/CategoryRadio.container';
 
-const items = ["TJ", "TJT", "TIL"];
+const items = ['TJ', 'TJT', 'TIL'];
 
 const PostModalUI = ({ handlePostModal }: IPostModal) => {
+	//* 모달 오픈 상태
 	const [open, setOpen] = useState(false);
-	const [radioValue, setRadioValue] = useState("TJ");
-	const [postTitle, setPostTitle] = useState("");
-	const [blogLink, setBlogLink] = useState("");
+
+	//* 블로그 선택 오픈 상태
 	const [isBlog, setIsBlog] = useState(false);
-	const [blogName, setBlogName] = useState("");
 
-	const handlePostTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setPostTitle(e.target.value);
+	//* 인풋 데이터 상태
+	const [radio, setRadioValue] = useState('TJ');
+	const [inputData, setInputData] = useState({
+		radio: '',
+		title: '',
+		blogName: '',
+		blogLink: '',
+	});
+
+	//* 라디오는 CategoryRadio Container에서 MaterialUI를 이용함.
+	//* 상태를 그쪽에서 변경해주기 때문에 UseEffect를 사용함.
+	useEffect(() => {
+		setInputData({
+			...inputData,
+			radio,
+		});
+	}, [radio]);
+
+	//* 인풋 데이터 변경 함수
+	const handleInputData = (
+		e:
+			| React.ChangeEvent<HTMLInputElement>
+			| React.MouseEvent<HTMLButtonElement, MouseEvent>,
+	) => {
+		let newInputData = {
+			...inputData,
+			[e.target.name]: e.target.value,
+		};
+		setInputData(newInputData);
 	};
 
-	const handleBlogLink = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setBlogLink(e.target.value);
-	};
-
+	//* 블로그 종류 모달 오픈 함수
 	const handleBlogOpen = () => {
 		setIsBlog((prev) => !prev);
-	};
-
-	const handleBlogName = (event: any) => {
-		setBlogName(event.target.innerText);
 	};
 
 	return (
@@ -71,13 +90,13 @@ const PostModalUI = ({ handlePostModal }: IPostModal) => {
 				PaperProps={{
 					style: {
 						// top: "200px",
-						width: "41.75rem",
-						display: "flex",
-						alignItems: "center",
+						width: '41.75rem',
+						display: 'flex',
+						alignItems: 'center',
 						// maxHeight: "1354px",
 					},
 				}}
-				maxWidth={"lg"}
+				maxWidth={'lg'}
 			>
 				<ModalProfileWrapper id="alert-dialog-slide-title">
 					<ModalProfileImg src="/img/postProfile.png"></ModalProfileImg>
@@ -94,7 +113,8 @@ const PostModalUI = ({ handlePostModal }: IPostModal) => {
 						<ModalContentTitle>제목</ModalContentTitle>
 						<ModalContentTitleTextBox
 							placeholder="제목을 입력해주세요."
-							onChange={handlePostTitle}
+							name="title"
+							onChange={handleInputData}
 						></ModalContentTitleTextBox>
 					</ModalContentTitleWrapper>
 					<ModalContentCategoryWrapper>
@@ -112,35 +132,51 @@ const PostModalUI = ({ handlePostModal }: IPostModal) => {
 							</ModalBlogSelectTitle>
 							<ModalBlogArrowDown src="/img/arrowDown2.png"></ModalBlogArrowDown>
 						</ModalBlogSelectBtn>
-						{isBlog ? (
+						{isBlog && (
 							<ModalBlogSelectWrapper>
-								<ModalBlogNotion onClick={handleBlogName}>
+								<ModalBlogNotion
+									name="blogName"
+									value="Notion"
+									onClick={handleInputData}
+								>
 									Notion
 								</ModalBlogNotion>
-								<ModalBlogVelog onClick={handleBlogName}>Velog</ModalBlogVelog>
-								<ModalBlogTistory onClick={handleBlogName}>
+								<ModalBlogVelog
+									name="blogName"
+									value="Velog"
+									onClick={handleInputData}
+								>
+									Velog
+								</ModalBlogVelog>
+								<ModalBlogTistory
+									name="blogName"
+									value="Tistory"
+									onClick={handleInputData}
+								>
 									Tistory
 								</ModalBlogTistory>
-								<ModalBlogGitBlog onClick={handleBlogName}>
+								<ModalBlogGitBlog
+									name="blogName"
+									value="GitBlog"
+									onClick={handleInputData}
+								>
 									Git Blog
 								</ModalBlogGitBlog>
 							</ModalBlogSelectWrapper>
-						) : (
-							<></>
 						)}
 					</ModalBlogWrapper>
 					<ModalLinkWrapper>
 						<ModalLinkTitle>링크</ModalLinkTitle>
 						<ModalLinkTextBox
 							placeholder="링크를 입력해주세요."
-							onChange={handleBlogLink}
+							onChange={handleInputData}
+							name="blogLink"
 						></ModalLinkTextBox>
 					</ModalLinkWrapper>
 					<ModalHrWapper>
 						<ModalHr></ModalHr>
 					</ModalHrWapper>
 				</ModalContentsWrapper>
-
 				<DialogActions>
 					<ModalPostBtn onClick={handlePostModal} color="primary">
 						포스트하기

@@ -3,7 +3,10 @@ import CategoryBtnContainer from "./CategoryBtn.container";
 import { MUISelect, useStyles } from "./CategoryBtn.styles";
 import { ICategoryBtnProps } from "./CategoryBtn.types";
 
-const CategoryBtnUI: React.FC<ICategoryBtnProps> = ({ handleChange, list }) => {
+const CategoryBtnUI: React.FC<ICategoryBtnProps> = ({
+	handleChange,
+	list,
+}: ICategoryBtnProps) => {
 	const classes = useStyles();
 
 	return (

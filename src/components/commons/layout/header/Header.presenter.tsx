@@ -1,3 +1,4 @@
+import { Link } from "@material-ui/core";
 import LoginModal from "../../loginModal/LoginModal.container";
 import HeaderContainer from "./Header.container";
 import {
@@ -27,7 +28,9 @@ const HeaderPresenter: React.FC<HeaderProps> = ({ isLogin }) => (
 				</HeaderRightLoginWrapper>
 			) : (
 				<HeaderRightLogoutWrapper>
-					<Login>로그인</Login>
+					<Link href="/login">
+						<Login>로그인</Login>
+					</Link>
 					<SignUp>회원가입</SignUp>
 				</HeaderRightLogoutWrapper>
 			)}

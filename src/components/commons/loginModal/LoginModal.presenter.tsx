@@ -1,7 +1,7 @@
-import { Modal } from "@material-ui/core";
-import { url } from "inspector";
-import React, { useState } from "react";
-import { SignUp } from "../layout/header/Header.styles";
+import { Modal } from '@material-ui/core';
+import { url } from 'inspector';
+import React, { useState } from 'react';
+import { SignUp } from '../layout/header/Header.styles';
 import {
 	Login,
 	LoginOpacity,
@@ -23,16 +23,15 @@ import {
 	LoginGoogleIcon,
 	LoginGoogleWrapper,
 	LoginGoogleTitle,
-} from "./LoginModal.styles";
-import SignUpModal from "../signup/SignUpModal.container";
+} from './LoginModal.styles';
+import SignUpModal from '../signup/SignUpModal.container';
+import { ILoginModal } from './LoginModal.types';
 
-const LoginModalUI = () => {
-	const [signUpOpen, setSignUpOpen] = useState(false);
-
-	const handleSignUpOpen = () => {
-		setSignUpOpen((prev) => !prev);
-	};
-
+const LoginModalUI = ({
+	handleSignUpOpen,
+	signUpOpen,
+	handleChangeLoginInput,
+}: ILoginModal) => {
 	return (
 		<>
 			<Login>
@@ -49,8 +48,17 @@ const LoginModalUI = () => {
 								</LoginGoogleWrapper>
 							</LoginGoogle>
 							<LoginHr />
-							<LoginId placeholder="ID"></LoginId>
-							<LoginPw placeholder="Password" type="password"></LoginPw>
+							<LoginId
+								name="id"
+								onChange={handleChangeLoginInput}
+								placeholder="ID"
+							></LoginId>
+							<LoginPw
+								name="password"
+								onChange={handleChangeLoginInput}
+								placeholder="Password"
+								type="password"
+							></LoginPw>
 							<LoginBtn>로그인하기</LoginBtn>
 							<LoginCheckWrapper>
 								<LoginCheck>

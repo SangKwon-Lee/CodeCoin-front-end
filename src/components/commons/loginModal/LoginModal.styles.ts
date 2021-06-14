@@ -132,7 +132,6 @@ export const LoginGoogleTitle = styled.div`
   export const LoginCheckWrapper = styled.div`
     display:flex;
     justify-content:space-between;
-    width: 9.1rem;
     align-self:flex-start;
     background-color:transparent;
     cursor:pointer;
